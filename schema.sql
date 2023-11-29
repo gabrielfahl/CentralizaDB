@@ -20,16 +20,21 @@ create table tarefa(
 	idcriador int not null,
 	nometarefa varchar(50) not null,
 	statustarefa varchar(20) not null,
-	descricao text not null,
-	horario time,
-	datainicio date,
-	datafim date,
 	tag varchar(50) not null,
 	primary key(idtarefa),
 	foreign key(idcriador) references usuario (id)
 )
 
 drop table tarefa;
+
+create table metatarefa(
+	idtarefa int,
+	descricao text,
+	horario time,
+	datainicio date,
+	datafim date,
+	foreign key(idtarefa) references tarefa(idtarefa)
+)
 
 create table subtarefas(
 	idsubtarefa int identity,
