@@ -13,8 +13,6 @@ create table usuario(
 	primary key(id)
 )
 
-drop table usuario;
-
 create table tarefa(
 	idtarefa int identity,
 	idcriador int not null,
@@ -24,8 +22,6 @@ create table tarefa(
 	primary key(idtarefa),
 	foreign key(idcriador) references usuario (id)
 )
-
-drop table tarefa;
 
 create table metatarefa(
 	idtarefa int,
@@ -44,5 +40,3 @@ create table subtarefas(
 	primary key(idsubtarefa),
 	foreign key(idmae) references tarefa (idtarefa)
 )
-
-drop table subtarefa;
