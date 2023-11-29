@@ -19,16 +19,18 @@ create table tarefa(
 	nometarefa varchar(50) not null,
 	statustarefa varchar(20) not null,
 	tag varchar(50) not null,
+	descricao text,
+	horario time,
+	datainicio date,
+	datafim date,
 	primary key(idtarefa),
 	foreign key(idcriador) references usuario (id)
 )
 
 create table metatarefa(
-	idtarefa int,
-	descricao text,
-	horario time,
-	datainicio date,
-	datafim date,
+    idtarefa int,
+	customcoluna varchar(50),
+	customvalor varchar(50),
 	foreign key(idtarefa) references tarefa(idtarefa)
 )
 
