@@ -28,7 +28,7 @@ create table tarefa(
 )
 
 create table metatarefa(
-    idtarefa int,
+	idtarefa int,
 	customcoluna varchar(50),
 	customvalor varchar(50),
 	foreign key(idtarefa) references tarefa(idtarefa)
